@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- meta -->
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Totems of Time</title>
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  
+  <!-- Blog Stylesheet File -->
+  <link href="css/amae.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+
+      <!-- Responsive css -->
+	<link href="css/responsive.css" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="images/favicon.png">
+
+</head>
+
+<body>
+
+  <!-- start section navbar -->
+  <nav id="main-nav-subpage" class="subpage-nav">
+    <div class="row">
+      <div class="container">
+
+        <!-- <div class="logo">
+          <a href="index.html"><img src="images/favicon.png" alt="logo"></a>
+        </div> -->
+
+        <div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div>
+
+        <ul class="nav-menu list-unstyled">
+          <li><a href="#top" class="smoothScroll">Scroll Up</a></li>
+          <!-- <li><a href="#about" class="smoothScroll">About</a></li> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- End section navbar -->
+  <!-- start section main content -->
+  <div class="main-content paddsection">
+    <div class="container" id="top">
+      <div class="row justify-content-center">
+        <div class="col-md-10 col-md-offset-2">
+          <div class="row">
+            <div class="container-main single-main">
+              <div class="col-md-12">
+                <div class="block-main mb-30">
+                  <img src="https://user-images.githubusercontent.com/42596601/116290481-588c3680-a748-11eb-802c-3c37d1e5bde5.png" class="res" alt="reviews2">
+                  <div class="content-main single-post padDiv">
+                    <div class="journal-txt">
+                      <h4>Totems of Time<br></h4>                    
+                      <hr>
+                    </div>
+                    <div class="post-meta">
+                      <ul class="list-unstyled mb-0">
+                        <li class="date">Object Oriented Programming, UI Design</li>
+                        <li class="author">Tools: Unity, Figma</li>
+                        <li class="date">date: Fall 2020</li>
+                        <li class="date">Group Project</li>
+                      </ul>
+                    </div>
+                    <p class="mb-30">Our game, “Totems of Time” is an adventure puzzle 3D game. The purpose is to solve all the puzzles in the ruin on a stranded island and find a raft to escape. During the gameplay, players need to solve geography puzzles. There are rotating platforms, pressure plates with raising platforms, and the most important element, time-travelling. With time travelling, the elements in the ruin change with time. Players need to use the time-travelling feature to overcome impossible missions.
+                      Find link to the prototype 
+                     <a href="https://drive.google.com/drive/folders/1v148Fwx85tOrxuInIZjQuz8FVvDxiiso?usp=sharing"><b><u>Windows</u></b></a>.</p>
+
+
+                    <h5>Design</h5>
+                      <p class="mb-30">
+                        Initially we started to do some research on action-adventure puzzle games such as Uncharted, Tomb Raider, and others. After we gained some insights on these puzzle games, we started to think and create our own level designs while keeping our primary mechanic (time travel) in mind. During the level design progress, We Iterated on the level designs a lot since there was a lot of confusion from the players when they played the game, starting from the visual cues and hints as well as the basic mechanics of the game.
+                        <br><br>For control schemes, from the playtesting, we learned it is extremely important to have the control set to be natural. Players like to use their experience in the other games to play our game, so it is more convenient for players to use the same control as other games. One example can be using WASD for moving the character. On the other hand, it is also necessary to have keys grouped together. For example, we make the left hand mainly control WASD, and the right hand controls the mouse. In that way, players' hands do not need to move a lot on the keyboard, which allows them to have a quick reaction to the situations in the game.
+                      </p>
+                      <a class="popup-img">
+                        <img src="https://user-images.githubusercontent.com/42596601/116295017-78722900-a74d-11eb-828b-cc863b0d5a6b.png" class="res" alt="reviews2" >
+                        <div class="caption"><figcaption>Game UI</figcaption></div>
+                      </a>
+
+                      <h5>Development</h5>
+                      <p class="mb-30">Since it is a 3D third-person game, the camera needs to follow the player's movement smoothly. We used a variety of features from the Cinemachine package that comes with Unity. The package has components like the free-look camera, collider avoidance, and state-driven cameras. These made it very easy for a natural-looking 3rd person camera. 
+
+                        The only thing added by code is how the camera communicates to the player. We wanted the player control to be relative to the camera (for example, when the player presses the‘ D’ key, they will always move to the right of the camera view). To do that, we had to use some trigonometry to figure out where the camera is looking in relation to the player (Figure 14 below shows the debugging process). It took us some time to figure out the system, but our player feedback over the past few iterations shows that we have been improving and we are satisfied with the final version we have. 
+                        </p>
+                        <a class="popup-img">
+                          <img src="https://user-images.githubusercontent.com/42596601/116297923-a73dce80-a750-11eb-9306-6967613bca5b.png" class="res" alt="reviews2" >
+                        </a>
+                        <div class="caption"><figcaption>Player and camera debug view</figcaption></div>
+                      
+                        <p class="mb-30">For the overall structure, we learned that how Start(), Update() and FixUpdate() functions works in the Unity lifecycle. Because the Update() function executes every frame, it is really important to have a well-formed structure to solve the conflicts in each frame. Everything runs asynchronously. Therefore, it is required to use IEnumnator to allow the codes to run in the order.
+                        </p>
+                        <a class="popup-img">
+                          <img src="https://user-images.githubusercontent.com/42596601/116297981-bcb2f880-a750-11eb-9e1a-922215268baf.png" class="res" alt="reviews2" >
+                        </a>
+                        <div class="caption"><figcaption>Player adult model’s animation controller</figcaption></div>
+
+                        <a class="popup-img">
+                          <img src="https://user-images.githubusercontent.com/42596601/116301134-8ecfb300-a754-11eb-88fe-65073c8a091a.png" class="res" alt="reviews2" >
+                        </a>
+                        <ul class="space">
+                          <li>Stage 1</li>
+                          <p>Stage 1 is the simplest stage of all three stages. The goal of the stage is to have players get familiar with the game mechanics. Therefore, it has a simple combination of the raising platform puzzle with pressure plates, a pushable box, gates with their lever triggers, and time-travelling. Time-travelling causes only one difference in this stage, in which the rock blocking the player’s path disappears in the past. In the following stages, time-travelling has more effects and impacts on the game’s environment.
+                          </p>                
+                            <li>Stage 2</li>
+                            <p>Stage 2 inherits some mechanics from Stage 1, like raising platforms, boxes, and time-travelling. However, time-travelling causes some different effects in this stage. One is the gap in the center of the stage, which is going to block players to reach the other end of the stage. The other is a slider puzzle that is broken in the present because part of it is on the ground nearby it. It is only working in the past. 
+
+                              Besides the difference in time-travelling mechanics, there are two new mechanics. One is the slider puzzle on the wall. The other is the rotating platform which is triggered by the lever trigger.                           
+                              </p>
+                              <li>Stage 3</li>
+                              <p>Stage 3 looks more complicated, but it is based on the previous two stages. In this stage, the time-travelling mechanic is going to influence the rock again. Rotating platforms, raising platforms, gates with lever triggers, and pushable boxes are all from the last two stages. There are two new mechanics which are the variant of the slider puzzle and rotating platforms. For the slider puzzle variant, this stage contains a rotate puzzle in which players need to rotate the puzzle and form an image. For the rotating platforms variant, four rotating platforms are going to rotate together with one trigger instead of one platform to one trigger.
+                              </p>
+                        </ul>
+
+                      <!-- <h5>Solution</h5> -->
+                      <!-- <p class="mb-30">We decided to build a one-stop application that addressed the issues highlighted by our primary and secondary research. Following communal parenting principles, Amae would give parents the ability to:</p>
+                      <a class="popup-img">
+                        <img src="https://user-images.githubusercontent.com/42596601/116300520-d4d84700-a753-11eb-930d-37a6b3b96eb2.png" class="res" alt="reviews2" >
+                      </a>
+                      <div class="caption"><figcaption>Testing Methods</figcaption></div>
+
+                      
+                      <h5>Features</h5>
+                      <p class="mb-30">We decided to build a one-stop application that addressed the issues highlighted by our primary and secondary research. Following communal parenting principles, Amae would give parents the ability to:</p>
+                      <a class="popup-img">
+                        <img src="https://user-images.githubusercontent.com/42596601/115325639-d9dc3b80-a140-11eb-8a31-d383fee978c4.png" class="res" alt="reviews2" >
+                      </a>
+                      <ul>
+                        <li>Taskboard</li>
+                        <p>The taskboard, the application’s primary dashboard, helps parents to schedule important events and assign frequently occurring tasks to their partners and/or guardians. 
+                          This features also gives parents the opportunity to utilize the task-outsourcing feature by allowing them to easily connect with nannies whom they may want to assign tasks to should they be interested in hiring one. 
+                          </p>
+                          <li>Nanny</li>
+                          <p>The nanny feature allows parents to surf through available nannies in their area. In a single tap, parents are able to learn more about nannies they are interested in by browsing their profiles for reviews and ratings. 
+                            Parents can message nannies right away if they are interested, either directly from the taskboard by selecting a specific task that they need assigning to, or through the nanny page where parents can browse through a list of nannies in their area.
+                            </p>
+                            <li>Learn</li>
+                            <p>The learn feature provides new parents with relevant and valuable child-rearing resources. One of the issues that we discovered was the abundance of information for child-rearing, making it difficult for new parents to find information that is both credible and reliable. 
+                              The learn feature is made up of two parts: an page where writers vetted by Amae can post their articles and a discussion forum for parents to start a conversation about a particular topic of interest. Amae opens up this avenue for new parents to connect with other parents in the same boat, as well as more experienced ones.</p>
+                      </ul>
+
+                      <h5>Interaction Patterns</h5>
+                      <p class="mb-30">One common thread across the application is the use of modules that can be scrolled horizontally. I found that this interaction pattern allowed users to see more details in each module, more so than a standard list format with vertical scrolling. This was particularly useful in creating the nanny cards. I took inspiration from dating apps like Tinder where users are taken through a selection journey one individual at a time. I found that a horizontal scroll interaction helped parents to connect with nanny profiles more by narrowing the user’s attention to roughly 3-5 nannies in a single glance. 
+                        Horizontal scroll was also useful in other features of the app, such as learn. This use of two dimensions helps users by showing a variety of options without making them visit separate category pages (selections from discussions and articles can be placed in one overview page, for example)</p>
+                      <a class="popup-img">
+                        <img src="https://user-images.githubusercontent.com/42596601/115327922-a6031500-a144-11eb-935c-916b6fcc81c1.png" class="res" alt="reviews2" >
+                      </a>
+
+                      <h5>Style Guide</h5>
+                      <p class="mb-30">The modules in our application was inspired by Google’s Material Design, which uses more grid-based layouts, responsive animations and transitions, padding, and depth effects such as lighting and shadows. As for the colour scheme, we focused on creating a bright and vibrant palette with an iconic pink accent to convey a cheerful and light-hearted feel. 
+                      </p>
+                      <a class="popup-img">
+                        <img src="https://user-images.githubusercontent.com/42596601/115325349-54f12200-a140-11eb-9059-e768ff95bbf8.jpg" class="res" alt="reviews2" >
+                      </a>
+                        <p class="mb-30">
+                          Overall, we wanted Amae to follow conventional mobile-application style guidelines so that it was easy for new users to learn the various interactions of the application, modelling the modularity of the application with the likes of Facebook, Instagram and Pinterest, some of the most commonly used applications amongst our target demographic.
+                        </p> -->
+
+                      
+
+                    <h5>Reflections</h5>
+                    <p class="mb-30">Finally, the most important thing we learned was how to work together as a group on a project. We were quite satisfied with how we all managed to meet twice every week in order to talk about our game and plan out the next steps that we are going to make in the upcoming weeks. Moreover, Github was really important to us in handling the conflicts among our updated versions. In addition, we also use messaging software and apps such as messenger and discord to keep our team updated with all news, changes, and important notices to our team so that no one is left out if there are any new changes made in the game. 
+                    </p>
+                    
+                    <div class="iframe-container">
+                      <iframe width="560" height="315" src="https://www.youtube.com/embed/xYlrz-RCvGA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                  
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+ 
+  <!-- End section footer -->
+  <script src="lib/jquery/jquery.min.js"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
